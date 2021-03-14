@@ -1,0 +1,39 @@
+<div class="section" id="projects">
+    <div class="container grid-projects">
+        <div class="h4 text-center mb-4 title grid-title">Proyectos</div>
+
+        <div class="card project-card" 
+             data-aos="zoom-in" 
+             data-aos-anchor-placement="top-bottom"
+             *ngFor="let item of projectItems">
+  
+            <div class="img-container">
+                <div class="img-project">
+                    <img [src]="item.imagen" alt="">
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-content">
+                    <h4>{{item.titulo}}</h4>
+                    <hr>
+                    <p>{{item.descripcion}}</p>
+                    <h4>Tecnologías</h4>
+                    <hr>
+                    <ul class="project-tec">
+                        <li *ngFor="let icon of item.icons"><i [class]="'fab '+icon"></i></li>
+                    </ul>
+                </div>
+
+                <ul class="project-links">
+                    <li>
+                        <a [href]="item.proyecto" target="_blank"><i class="fas fa-file-alt"></i>Ver proyecto</a>
+                    </li>
+                    <li>
+                        <a [href]="item.codigo" target="_blank"><i class="fab fa-github"></i>Ver Código</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+  </div>
